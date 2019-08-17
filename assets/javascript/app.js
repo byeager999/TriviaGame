@@ -6,6 +6,71 @@ var clockRunning = false;
 var intervalId;
 var userGuess = [];
 
+var questions = [
+    {
+        "question1": "What was the first production car to reach 200 mph?",
+        "options1": [
+            "Porsche 959",
+            "Ferrari F40",
+            "Lamborghini Countach",
+            "BMW M1"
+        ],
+        options1Answer: 1
+    },
+    {
+        "question2": "What supercar manufacturer started out by making tractors?",
+        "options2": [
+            "Mercedes Benz",
+            "Lamborghini",
+            "Ferrari",
+            "Pagani"
+        ],
+        options2Answer: 1
+
+    },
+    {
+        "question3": "How many seats are in a McLaren F1?",
+        "options3": [
+            "4",
+            "2",
+            "1",
+            "3"
+        ],
+        options3Answer: 3
+    },
+    {
+        "quesiton4": "What was the nickname ohe Porsche 930?",
+        "options4": [
+            "The Bug",
+            "The Widowmaker",
+            "The German",
+            "Whale Tail"
+        ],
+        options4Answer: 1
+    },
+    {
+        "question5": "Volkswagen owns which car company?",
+        "options5": [
+            "Bentley",
+            "BMW",
+            "Aston Martin",
+            "Rolls Royce"
+        ],
+        options5Answer: 0
+    }
+];
+
+// function to submit answers
+function submitAns(){
+    $("#submitAnswers").on("click", function(e){
+        e.preventDefault();
+        userGuess.length = 0;
+
+        // record user answer to question
+        var userChoice = $(#)
+    }
+    )
+}
 
 // User starts game
 
@@ -44,127 +109,21 @@ function stop() {
 }
 
 
-
-
-
-//  The decrement function.
-
-
-// Question 1 object
-var choices1 = {
-    "question1": "What was the first production car to reach 200 mph?",
-    "options1": [
-        "Porsche 959",
-        "Ferrari F40",
-        "Lamborghini Countach",
-        "BMW M1"
-    ]
-};
-// var userGuess1 button click something  Would this be var userGuesss1 = document.getElementById("idName").value?
-if (userGuess1 === choices1.options1[1]) {
-    console.log("Correct!");
-    right++;
-} else if (userGuess !== options1[1]) {
-    console.log("Wrong!");
-    wrong++;
-
-} else {
-    console.log("Incomplete");
-    unanswered++;
+function displayEnd() {
+	clearQ();
+	$("#content").append('<h3>' + "Correct answers: " + correct + '</h3><br><h3>' + "Incorrect answers: " + incorrect + '</h3><br><h3>' + "Skipped questions: " + missed + '</h3><br><br><a href="#" class="btn btn-primary btn-lg" id="restart-button">' + "Restart Game" + '</a>');
+	//Restart game
+	$("#restart-button").on("click", function(event) {
+		event.preventDefault();
+		//Displays the first question
+		reset();
+		clearQ();
+		displayStart();
+	});
 };
 
-// Question 2 object
-var choices2 = {
-    "question2": "What supercar manufacturer started out by making tractors?",
-    "options2": [
-        "Mercedes Benz",
-        "Lamborghini",
-        "Ferrari",
-        "Pagani"
-    ]
-};
 
-// var userGuess2 button click something
-if (userGuess2 === options2[1]) {
-    console.log("Correct!");
-    right++;
-} else if (userGuess !== options1[1]) {
-    console.log("Wrong!");
-    wrong++;
 
-} else {
-    console.log("Incomplete");
-    unanswered++;
-};
-
-// Question 3 object
-var choices3 = {
-    "question3": "How many seats are in a McLaren F1?",
-    "options3": [
-        "4",
-        "2",
-        "1",
-        "3"
-    ]
-};
-// var userGuess3 button click something
-if (userGuess3 === options3[3]) {
-    console.log("Correct!");
-    right++;
-} else if (userGuess !== options1[3]) {
-    console.log("Wrong!");
-    wrong++;
-
-} else {
-    console.log("Incomplete");
-    unanswered++;
-};
-
-// Question 4 object
-var choices4 = {
-    "quesiton4": "What was the nickname ohe Porsche 930?",
-    "options4": [
-        "The Bug",
-        "The Widowmaker",
-        "The German",
-        "Whale Tail"
-    ]
-};
-// var userGuess4 button click something
-if (userGuess4 === options4[1]) {
-    console.log("Correct!");
-    right++;
-} else if (userGuess !== options1[1]) {
-    console.log("Wrong!");
-    wrong++;
-
-} else {
-    console.log("Incomplete");
-    unanswered++;
-};
-
-// Question 5 object
-var choices5 = {
-    "question5": "Volkswagen owns which car company?",
-    "options5": [
-        "Bentley",
-        "BMW",
-        "Aston Martin",
-        "Rolls Royce"
-    ]
-};
-// var userGuess5 button click something
-if (userGuess5 === options5[0]) {
-    console.log("Correct!");
-    right++;
-} else if (userGuess !== options1[1]) {
-    console.log("Wrong!");
-    wrong++;
-
-} else {
-    console.log("Incomplete");
-    unanswered++;
-};
 
 
 
